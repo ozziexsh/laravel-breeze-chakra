@@ -1,0 +1,82 @@
+{
+  "name": "laravel-breeze-chakra",
+  "version": "0.1.0",
+  "description": "Convert laravel breeze react to chakra ui",
+  "author": "Ozzie Neher @ozziexsh",
+  "bin": {
+    "laravel-breeze-chakra": "./bin/run"
+  },
+  "homepage": "https://github.com/ozziexsh/laravel-breeze-chakra",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "ozziexsh/laravel-breeze-chakra",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^1.16.4",
+    "@oclif/plugin-help": "^5",
+    "fs-extra": "^10.1.0"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.2.2",
+    "@types/chai": "^4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.63",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^9",
+    "oclif": "^3",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.8.4"
+  },
+  "oclif": {
+    "bin": "laravel-breeze-chakra",
+    "dirname": "laravel-breeze-chakra",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b && shx cp -R src/stubs dist/stubs",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "npm run lint",
+    "prepack": "npm run build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/ozziexsh/laravel-breeze-chakra/issues",
+  "keywords": [
+    "laravel",
+    "breeze",
+    "chakra",
+    "react",
+    "tailwind"
+  ],
+  "types": "dist/index.d.ts",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "arrowParens": "avoid",
+    "htmlWhitespaceSensitivity": "ignore"
+  }
+}
