@@ -34,7 +34,7 @@ Here are a few helpers available to you
 Gives you access to a typed version of [`ziggy-js`](https://github.com/tighten/ziggy)
 
 ```javascript
-import useRoute from '@/hooks/useRoute';
+import useRoute from '@/Hooks/useRoute';
 
 function Component() {
   const route = useRoute();
@@ -52,7 +52,7 @@ Gives you access to a typed version of [`usePage()`]() from inertia
 The type is prefilled with the shared props that jetstream passes through and gives you the option to pass your own type if your page has custom props in addition to the others
 
 ```typescript
-import useTypedPage from '@/hooks/useTypedPage';
+import useTypedPage from '@/Hooks/useTypedPage';
 
 function Component() {
   const { props } = useTypedPage<{ canViewThisPage: boolean; }>();
